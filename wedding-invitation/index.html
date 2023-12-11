@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Digital Invitation</title>
+</head>
+<body>
+    <div class="header">
+        <!-- Menu button in the top left corner -->
+        <button class="menu-button" onclick="toggleMainMenu()">☰</button>
+        <!-- Undo and Redo buttons at the top right corner -->
+        <div class="undo-redo-buttons">
+            <button class="undo-redo-button" onclick="undo()">⬅ Undo</button>
+            <button class="undo-redo-button" onclick="redo()">Redo ➡</button>
+        </div>
+    </div>
+
+    <!-- Submenus for main menu -->
+    <div class="submenu" id="mainMenu">
+        <a href="#">Settings</a>
+        <a href="#">Contact</a>
+        <div class="contact-submenu">
+            <p>Cell: 9113099299</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/hemanth-kumar-g-6b532627a/" target="_blank">https://www.linkedin.com/in/hemanth-kumar-g-6b532627a/</a></p>
+            <p>GitHub: <a href="https://github.com/HemanthKumarG11" target="_blank">https://github.com/HemanthKumarG11</a></p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="image-container" id="imageContainer" onclick="showTextMenu(event)">
+            <img src="images/wedding.avif" alt="Sample Image">
+            <div class="text-overlay" id="textOverlay"></div>
+        </div>
+
+        <div class="text-menu" id="textMenu">
+            <button class="close-button" onclick="closeTextMenu()">✖</button>
+            <label for="textInput">Enter Text:</label>
+            <input type="text" id="textInput" placeholder="Type your text">
+
+            <label for="fontSizeInput">Font Size:</label>
+            <input type="number" id="fontSizeInput" placeholder="Enter font size">
+
+            <label for="fontStyleInput">Font Style:</label>
+            <select id="fontStyleInput">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+            </select>
+
+            <button onclick="updateImageText()">Update Text</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
